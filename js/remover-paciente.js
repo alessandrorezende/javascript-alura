@@ -1,8 +1,15 @@
 var table = document.querySelector("table");
 table.addEventListener("dblclick",function(event){
-    var alvoDoEvento = event.target; //TR
-    var paiDoAlvo =   event.target.parentNode; //TD
-    paiDoAlvo.remove();
+    var alvoDoEvento = event.target; //TD
+    var paiDoAlvo =   event.target.parentNode; //TR
+
+    if(alvoDoEvento.tagName == "TD"){ //remover paciente apenas se clicado em um TD
+        paiDoAlvo.classList.add("fadeOut");
+        setTimeout(function(){
+          paiDoAlvo.remove();
+        },700); //aguarda meio segundo para remover
+    }
+
 });
 
 /*
