@@ -1,5 +1,6 @@
 var botaoAdicionar = document.querySelector("#buscar-pacientes");
 botaoAdicionar.addEventListener("click", function() {
+  //fazer requisição
   var xhr = new XMLHttpRequest();
 
   //chamada de serviço em javascript
@@ -8,7 +9,6 @@ botaoAdicionar.addEventListener("click", function() {
   //escutador para verificar se já retornou a resposta
   xhr.addEventListener("load", function() {
     var erroAjax = document.querySelector("#erro-ajax");
-
     if (xhr.status == 200) {
       erroAjax.classList.add("invisivel");
       var resposta = xhr.responseText;
@@ -19,7 +19,6 @@ botaoAdicionar.addEventListener("click", function() {
     }else {
       erroAjax.classList.remove("invisivel");
     }
-
   });
 
   //envio da requisição
