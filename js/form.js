@@ -20,6 +20,12 @@ botaoAdicionar.addEventListener("click", function(event) {
     mensagemErro.innerHTML = "";
 });
 
+function adicionaPacienteNaTabela(paciente) {
+    var pacienteTr = montaTr(paciente);
+    var tabela = document.querySelector("#tabela-pacientes");
+    tabela.appendChild(pacienteTr);
+}
+
 function obtemPacienteDoFormulario(form){
     var paciente = {
         nome : form.nome.value,
